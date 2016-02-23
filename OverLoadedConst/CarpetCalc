@@ -1,0 +1,36 @@
+/**
+ * Created by Alex_Wisecarver on 2/9/2016.
+ */
+import java.util.Scanner;
+
+public class CarpCalc {
+
+    public static void main(String[] args) {
+
+        double length;
+        double width;
+        double price;
+
+        RoomDimension dimensions;
+        CarpetClass room;
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter the Length of your room: ");
+        length = keyboard.nextDouble();
+
+        System.out.println("Enter the Width of your room: ");
+        width = keyboard.nextDouble();
+
+        System.out.println("Enter the price per Square Foot: ");
+        price = keyboard.nextDouble();
+
+        dimensions = new RoomDimension(length, width);
+        room = new CarpetClass(dimensions, price);
+
+
+        System.out.println(room);
+
+
+    }
+
+}
