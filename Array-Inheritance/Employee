@@ -1,0 +1,63 @@
+public class Employee {
+
+
+
+        public String empName;
+        public String empNum;
+        public String hire;
+
+
+        public Employee(String empName, String empNum, String hire )
+        {
+
+
+
+            this.empName = new String(empName);
+            this.empNum = new String(empNum);
+            this.hire = new String(hire);
+
+
+        }
+
+    public Employee()
+    {
+
+    }
+
+
+
+
+    public String getName()
+    {
+        return empName;
+    }
+
+
+    public String getNumber()
+    {
+        return empNum;
+    }
+
+    public String getDate()
+    {
+        return hire;
+    }
+
+
+    public void setDate(String hire)
+    {
+        this.hire = hire;
+    }
+
+
+    public String toString()
+    {
+        String string = "Employee Name: " + empName + "\n Employee Number: " + empNum + "\n Hire Date: " + hire;
+        return string;
+    }
+
+
+
+
+
+}
