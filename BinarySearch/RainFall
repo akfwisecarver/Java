@@ -1,0 +1,103 @@
+/**
+ * Created by Alex_Wisecarver on 2/11/2016.
+ */
+import java.util.Scanner;
+import java.text.DateFormatSymbols;
+
+public class RainFaill {
+
+    public static void main(String[] args) {
+
+
+        double totrain;
+        double avgrain;
+        double mostrain;
+        double leastrain;
+
+        double[] Months = new double[12];
+
+        String[] MonthNames = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+
+        Scanner keyboard = new Scanner(System.in);
+
+
+        System.out.println("Enter the amount of rain for the month: ");
+        int x = 0;
+
+
+
+
+
+
+
+
+        for (x = 0; x < 12; x++) {
+            do {
+                System.out.println("Month" + (x + 1) + ": ");
+                Months[x] = keyboard.nextDouble();
+            }
+            while (Months[x] < 0);
+        }
+
+
+
+        System.out.println("The total amount of rain was: " + totrain(Months));
+        System.out.println("The average amount of rain was: " + avgrain(Months));
+        System.out.println("The month with the most amount of rain was: " + mostrain(Months));
+        System.out.println("The month with the least amount of rain was: " + leastrain(Months));
+
+
+    }
+
+
+    static double totrain(double[] array) {
+
+        double total = 0;
+        for (int x = 0; x < array.length; x++) {
+            total += array[x];
+        }
+        return total;
+
+    }
+
+
+    static double avgrain(double[] array)
+    {
+
+        double average = 0;
+average = totrain(array)/array.length;
+        return average;
+    }
+
+    static double mostrain(double[] array)
+    {
+        double most = array[0];
+        for(int x = 0; x < array.length; x++)
+        {
+            if (array[x] > most) {
+
+                most = (x-1);
+            }
+        }
+        return most;
+    }
+
+    static double leastrain(double[] array)
+    {
+        double least = array[0];
+        for(int x = 0; x < array.length; x++)
+        {
+            if(array[x] < least)
+            {
+                least = (x+1);
+            }
+        }
+        return least;
+    }
+
+
+}
+
+
+
+
