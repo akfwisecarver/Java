@@ -1,0 +1,61 @@
+/**
+ * Created by Alex_Wisecarver on 2/17/2016.
+ */
+public class ShiftSupervisor extends Employee{
+
+
+    private double annualSalary;
+    private double annualBonus;
+
+
+
+    public ShiftSupervisor(String empName, String empNum, String hire, double Salary, double Bonus)
+    {
+        super(empName, empNum, hire);
+        this.annualSalary = Salary;
+        this.annualBonus = Bonus;
+
+    }
+
+
+    public ShiftSupervisor(ShiftSupervisor ss)
+    {
+        super(ss.getName(), ss.getNumber(), ss.getDate());
+        this.annualBonus = ss.getAnnualBonus();
+        this.annualSalary = ss.getAnnualSalary();
+    }
+
+    public double getAnnualSalary()
+    {
+        return annualSalary;
+    }
+
+    public void setAnnualSalary(double newSal)
+    {
+        this.annualSalary = newSal;
+    }
+
+    public double getAnnualBonus()
+    {
+        return annualBonus;
+    }
+
+    public void setAnnualBonus(double nextBon)
+    {
+        this.annualBonus = nextBon;
+    }
+
+    public String toString()
+    {
+        String string = super.toString();
+        string += "\n Employee Annual Salary: " + annualSalary + "\n Employee Annual Bonus: " + annualBonus;
+
+        return string;
+    }
+
+
+
+
+
+
+}
