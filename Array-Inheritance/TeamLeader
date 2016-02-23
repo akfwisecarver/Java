@@ -1,0 +1,79 @@
+/**
+ * Created by Alex_Wisecarver on 2/17/2016.
+ */
+public class TeamLeader extends ProductionWorker {
+
+    private double monthBonus;
+    private double requiredTrainHours;
+    private double compeltedHours;
+
+
+
+
+    public TeamLeader(String empName, String empNum, String hire, int shift, double payRate, double monthlyBonus, double rth, double cth)
+    {
+        super(empName, empNum, hire, shift, payRate);
+        this.monthBonus = monthlyBonus;
+        this.requiredTrainHours = rth;
+        this.compeltedHours = cth;
+    }
+
+
+    public TeamLeader(TeamLeader l1)
+    {
+        super(l1.getName(), l1.getNumber(), l1.getDate(), l1.getShift(), l1.getPayRate());
+        this.monthBonus = l1.getMonthBonus();
+        this.requiredTrainHours = l1.getRequiredHours();
+        this.compeltedHours = l1.getCompletedHours();
+    }
+
+
+    public double getMonthBonus()
+    {
+        return monthBonus;
+    }
+
+
+    public void setMonthBonus(double bonus)
+    {
+        this.monthBonus = bonus;
+    }
+
+    public double getRequiredHours()
+    {
+        return requiredTrainHours;
+    }
+
+    public void setRequiredTrainHours(double hours)
+    {
+        this.requiredTrainHours = hours;
+    }
+
+
+    public double getCompletedHours()
+    {
+        return compeltedHours;
+    }
+
+    public void setCompeltedHours(double hours)
+    {
+        this.compeltedHours = hours;
+    }
+
+
+    public String toString()
+    {
+        String string = super.toString();
+        string += "\n Employee Monthly Bonus: " + monthBonus + "\n Employee Required Training: " + requiredTrainHours + "\n Employee Completed Training: " + compeltedHours;
+        return string;
+    }
+
+
+
+
+
+
+// You might want to do a loop to catch that, so that if they try to put in the wrong number for the shift, it will keep asking them for that
+
+
+}
