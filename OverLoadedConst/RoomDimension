@@ -1,0 +1,39 @@
+/**
+ * Created by Alex_Wisecarver on 2/9/2016.
+ */
+public class RoomDimension {
+
+    private double length;
+    private double width;
+
+
+
+        public RoomDimension(double len, double wid)
+        {
+            length = len;
+            width = wid;
+        }
+
+    public double getLength()
+    {
+        return length;
+    }
+
+    public double getWidth()
+    {
+        return width;
+    }
+
+
+    public double getArea()
+    {
+        return length * width;
+    }
+
+
+    public String toString() {
+        String str = "Length is " + length + " Feet, Width is " + width + " feet, and Area is " + getArea() + " Square Feet";
+        return str;
+    }
+
+}
