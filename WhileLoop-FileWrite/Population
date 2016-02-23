@@ -1,0 +1,50 @@
+import java.util.Scanner;
+import java.text.*;
+
+public class Population {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        NumberFormat df = DecimalFormat.getInstance();
+        df.setMaximumFractionDigits(2);
+        int days;
+        double organisms = 0;
+        double increaseRate = 0;
+
+
+        System.out.print("Number of days to multiply: ");
+        days  = input.nextInt();
+
+        while(days < 1){
+            System.out.print("Invalid entry. Re-enter a value greater than 0: ");
+            days  = input.nextInt();
+        }
+
+        System.out.print("Number of organisms: ");
+        organisms = input.nextDouble();
+
+        while( organisms < 2){
+            System.out.print("Ivalid entry. Re-enter a value greater than 1: ");
+            organisms = input.nextDouble();
+        }
+
+        System.out.print("Percentage of increase: ");
+        increaseRate = input.nextDouble()/100;
+
+        while( increaseRate < 0){
+            System.out.print("Ivalid entry. Re-enter a non-negative value: ");
+            increaseRate = input.nextDouble();
+        }
+
+        System.out.println(""); // Newline
+
+        System.out.println("Day" +"       Population" + "       Percent of Increase");
+        System.out.println("_______________________________________________");
+        System.out.println("  1           " + df.format(organisms));
+        for(int i=2; i<days + 1; i++){
+            organisms += (organisms *= increaseRate);
+            System.out.println("  " +i + "           " + df.format(organisms) + "                " + (increaseRate*100)+"%");
+        }
+    }
+}
