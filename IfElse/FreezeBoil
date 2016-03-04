@@ -17,6 +17,9 @@ public class FreezeBoil {
                 temperature);
 
 
+// This is where the If Statements come into play
+
+
         if (freezeAndBoiling.isEthylAlchoolFreezing()) {
             System.out.println("Ethyl alcohol will freeze.");
         }
@@ -53,6 +56,10 @@ public class FreezeBoil {
         public double getTemperature() {
             return temperature;
         }
+
+
+//and here are the If-Else Statments
+
 
 
         public boolean isEthylAlchoolFreezing() {
